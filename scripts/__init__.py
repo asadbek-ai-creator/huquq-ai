@@ -1,0 +1,3 @@
+"""
+Scripts package for huquqAI
+"""

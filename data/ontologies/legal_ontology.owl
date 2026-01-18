@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY kk "http://karakalpak.law/ontology#" >
+]>
+
+<rdf:RDF xmlns="http://karakalpak.law/ontology#"
+     xml:base="http://karakalpak.law/ontology"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:kk="http://karakalpak.law/ontology#">
+
+    <owl:Ontology rdf:about="http://karakalpak.law/ontology">
+        <rdfs:label xml:lang="kk">Qaraqalpaqstan Respublikası Huquqıy Ontologiyası</rdfs:label>
+        <rdfs:label xml:lang="en">Karakalpakstan Legal System Ontology</rdfs:label>
+        <rdfs:comment xml:lang="kk">Qaraqalpaqstan huquqıy sisteması ushın ontologiya</rdfs:comment>
+        <rdfs:comment xml:lang="en">Ontology for Karakalpakstan legal system with native terminology</rdfs:comment>
+        <owl:versionInfo>1.0</owl:versionInfo>
+    </owl:Ontology>
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes - Klasslar
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <!-- http://karakalpak.law/ontology#HuquqıyTúsinik -->
+    <owl:Class rdf:about="&kk;HuquqıyTúsinik">
+        <rdfs:label xml:lang="kk">Huquqıy Túsinik</rdfs:label>
+        <rdfs:label xml:lang="en">Legal Concept</rdfs:label>
+        <rdfs:comment xml:lang="kk">Huquqıy sistemadaǵı barlıq túsiniklerdiń negizgi klassı</rdfs:comment>
+        <rdfs:comment xml:lang="en">Base class for all legal concepts in the system</rdfs:comment>
+    </owl:Class>
+
+
+    <!-- http://karakalpak.law/ontology#Nızam -->
+    <owl:Class rdf:about="&kk;Nızam">
+        <rdfs:subClassOf rdf:resource="&kk;HuquqıyTúsinik"/>
+        <rdfs:label xml:lang="kk">Nızam</rdfs:label>
+        <rdfs:label xml:lang="en">Law</rdfs:label>
+        <rdfs:comment xml:lang="kk">Huquqıy kodeks yamasa nızam</rdfs:comment>
+        <rdfs:comment xml:lang="en">Legal code or law</rdfs:comment>
+    </owl:Class>
+
+
+    <!-- http://karakalpak.law/ontology#Statiya -->
+    <owl:Class rdf:about="&kk;Statiya">
+        <rdfs:subClassOf rdf:resource="&kk;HuquqıyTúsinik"/>
+        <rdfs:label xml:lang="kk">Statiya</rdfs:label>
+        <rdfs:label xml:lang="en">Article</rdfs:label>
+        <rdfs:comment xml:lang="kk">Nızamdıń bir bólimi - statiya</rdfs:comment>
+        <rdfs:comment xml:lang="en">Article of a law</rdfs:comment>
+    </owl:Class>
+
+
+    <!-- http://karakalpak.law/ontology#Jinayat -->
+    <owl:Class rdf:about="&kk;Jinayat">
+        <rdfs:subClassOf rdf:resource="&kk;HuquqıyTúsinik"/>
+        <rdfs:label xml:lang="kk">Jinayat</rdfs:label>
+        <rdfs:label xml:lang="en">Crime</rdfs:label>
+        <rdfs:comment xml:lang="kk">Jinayat qılmıs</rdfs:comment>
+        <rdfs:comment xml:lang="en">Criminal offense</rdfs:comment>
+    </owl:Class>
+
+
+    <!-- http://karakalpak.law/ontology#Jaza -->
+    <owl:Class rdf:about="&kk;Jaza">
+        <rdfs:subClassOf rdf:resource="&kk;HuquqıyTúsinik"/>
+        <rdfs:label xml:lang="kk">Jaza</rdfs:label>
+        <rdfs:label xml:lang="en">Punishment</rdfs:label>
+        <rdfs:comment xml:lang="kk">Jinayat ushın jaza</rdfs:comment>
+        <rdfs:comment xml:lang="en">Punishment for crime</rdfs:comment>
+    </owl:Class>
+
+
+    <!-- http://karakalpak.law/ontology#AwırJinayat -->
+    <owl:Class rdf:about="&kk;AwırJinayat">
+        <rdfs:subClassOf rdf:resource="&kk;Jinayat"/>
+        <rdfs:label xml:lang="kk">Awır Jinayat</rdfs:label>
+        <rdfs:label xml:lang="en">Heavy Crime</rdfs:label>
+        <rdfs:comment xml:lang="kk">10 jıldan artıq jaza beriletuǵın awır jinayat</rdfs:comment>
+        <rdfs:comment xml:lang="en">Serious crime with punishment over 10 years</rdfs:comment>
+    </owl:Class>
+
+
+    <!-- http://karakalpak.law/ontology#OrtaAwırlıqtaǵıJinayat -->
+    <owl:Class rdf:about="&kk;OrtaAwırlıqtaǵıJinayat">
+        <rdfs:subClassOf rdf:resource="&kk;Jinayat"/>
+        <rdfs:label xml:lang="kk">Orta Awırlıqtaǵı Jinayat</rdfs:label>
+        <rdfs:label xml:lang="en">Medium Severity Crime</rdfs:label>
+        <rdfs:comment xml:lang="kk">Orta awırlıqtaǵı jinayat</rdfs:comment>
+        <rdfs:comment xml:lang="en">Crime of medium severity</rdfs:comment>
+    </owl:Class>
+
+
+    <!-- http://karakalpak.law/ontology#JeńilJinayat -->
+    <owl:Class rdf:about="&kk;JeńilJinayat">
+        <rdfs:subClassOf rdf:resource="&kk;Jinayat"/>
+        <rdfs:label xml:lang="kk">Jeńil Jinayat</rdfs:label>
+        <rdfs:label xml:lang="en">Light Crime</rdfs:label>
+        <rdfs:comment xml:lang="kk">Jeńil jinayat</rdfs:comment>
+        <rdfs:comment xml:lang="en">Minor crime</rdfs:comment>
+    </owl:Class>
+
+
+    <!-- http://karakalpak.law/ontology#MúlikkeQarsıJinayat -->
+    <owl:Class rdf:about="&kk;MúlikkeQarsıJinayat">
+        <rdfs:subClassOf rdf:resource="&kk;Jinayat"/>
+        <rdfs:label xml:lang="kk">Múlikke Qarsı Jinayat</rdfs:label>
+        <rdfs:label xml:lang="en">Property Crime</rdfs:label>
+        <rdfs:comment xml:lang="kk">Múlikke qarsı islenetuǵın jinayat</rdfs:comment>
+        <rdfs:comment xml:lang="en">Crime against property</rdfs:comment>
+    </owl:Class>
+
+
+    <!-- http://karakalpak.law/ontology#AdamǵaQarsıJinayat -->
+    <owl:Class rdf:about="&kk;AdamǵaQarsıJinayat">
+        <rdfs:subClassOf rdf:resource="&kk;Jinayat"/>
+        <rdfs:label xml:lang="kk">Adamǵa Qarsı Jinayat</rdfs:label>
+        <rdfs:label xml:lang="en">Crime Against Person</rdfs:label>
+        <rdfs:comment xml:lang="kk">Adam denesilikine qarsı islenetuǵın jinayat</rdfs:comment>
+        <rdfs:comment xml:lang="en">Crime against person</rdfs:comment>
+    </owl:Class>
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties - Obekt Qásiyetleri
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <!-- http://karakalpak.law/ontology#tiyisli -->
+    <owl:ObjectProperty rdf:about="&kk;tiyisli">
+        <rdfs:label xml:lang="kk">tiyisli</rdfs:label>
+        <rdfs:label xml:lang="en">belongs to</rdfs:label>
+        <rdfs:comment xml:lang="kk">Statiya qaysı nızamǵa tiyisli ekenligin kórsetedi</rdfs:comment>
+        <rdfs:comment xml:lang="en">Indicates which law an article belongs to</rdfs:comment>
+        <rdfs:domain rdf:resource="&kk;Statiya"/>
+        <rdfs:range rdf:resource="&kk;Nızam"/>
+    </owl:ObjectProperty>
+
+
+    <!-- http://karakalpak.law/ontology#baylanıslı -->
+    <owl:ObjectProperty rdf:about="&kk;baylanıslı">
+        <rdfs:label xml:lang="kk">baylanıslı</rdfs:label>
+        <rdfs:label xml:lang="en">related to</rdfs:label>
+        <rdfs:comment xml:lang="kk">Statiyalardıń arasındaǵı baylanıstı kórsetedi</rdfs:comment>
+        <rdfs:comment xml:lang="en">Indicates relationship between articles</rdfs:comment>
+        <rdfs:domain rdf:resource="&kk;Statiya"/>
+        <rdfs:range rdf:resource="&kk;Statiya"/>
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+    </owl:ObjectProperty>
+
+
+    <!-- http://karakalpak.law/ontology#jaza_beredi -->
+    <owl:ObjectProperty rdf:about="&kk;jaza_beredi">
+        <rdfs:label xml:lang="kk">jaza beredi</rdfs:label>
+        <rdfs:label xml:lang="en">gives punishment</rdfs:label>
+        <rdfs:comment xml:lang="kk">Statiya qanday jaza berip atırǵanın kórsetedi</rdfs:comment>
+        <rdfs:comment xml:lang="en">Indicates what punishment an article prescribes</rdfs:comment>
+        <rdfs:domain rdf:resource="&kk;Statiya"/>
+        <rdfs:range rdf:resource="&kk;Jaza"/>
+    </owl:ObjectProperty>
+
+
+    <!-- http://karakalpak.law/ontology#kámil_etedi -->
+    <owl:ObjectProperty rdf:about="&kk;kámil_etedi">
+        <rdfs:label xml:lang="kk">kámil etedi</rdfs:label>
+        <rdfs:label xml:lang="en">constitutes</rdfs:label>
+        <rdfs:comment xml:lang="kk">Statiya qanday jinayattı kámil etedi</rdfs:comment>
+        <rdfs:comment xml:lang="en">Indicates what crime an article constitutes</rdfs:comment>
+        <rdfs:domain rdf:resource="&kk;Statiya"/>
+        <rdfs:range rdf:resource="&kk;Jinayat"/>
+    </owl:ObjectProperty>
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data Properties - Maǵlıwmat Qásiyetleri
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <!-- http://karakalpak.law/ontology#statiya_nómiri -->
+    <owl:DatatypeProperty rdf:about="&kk;statiya_nómiri">
+        <rdfs:label xml:lang="kk">statiya nómiri</rdfs:label>
+        <rdfs:label xml:lang="en">article number</rdfs:label>
+        <rdfs:comment xml:lang="kk">Statiyenıń nómiri</rdfs:comment>
+        <rdfs:comment xml:lang="en">Article number</rdfs:comment>
+        <rdfs:domain rdf:resource="&kk;Statiya"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://karakalpak.law/ontology#sárelaw -->
+    <owl:DatatypeProperty rdf:about="&kk;sárelaw">
+        <rdfs:label xml:lang="kk">sárelaw</rdfs:label>
+        <rdfs:label xml:lang="en">title</rdfs:label>
+        <rdfs:comment xml:lang="kk">Statiyenıń sárelawı (atı)</rdfs:comment>
+        <rdfs:comment xml:lang="en">Title of the article</rdfs:comment>
+        <rdfs:domain rdf:resource="&kk;Statiya"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://karakalpak.law/ontology#tekstı -->
+    <owl:DatatypeProperty rdf:about="&kk;tekstı">
+        <rdfs:label xml:lang="kk">tekstı</rdfs:label>
+        <rdfs:label xml:lang="en">text</rdfs:label>
+        <rdfs:comment xml:lang="kk">Statiyenıń tolıq tekstı</rdfs:comment>
+        <rdfs:comment xml:lang="en">Full text of the article</rdfs:comment>
+        <rdfs:domain rdf:resource="&kk;Statiya"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://karakalpak.law/ontology#jaza_min -->
+    <owl:DatatypeProperty rdf:about="&kk;jaza_min">
+        <rdfs:label xml:lang="kk">jaza minimal</rdfs:label>
+        <rdfs:label xml:lang="en">minimum punishment</rdfs:label>
+        <rdfs:comment xml:lang="kk">Eń kem jaza muddeti (jıl)</rdfs:comment>
+        <rdfs:comment xml:lang="en">Minimum punishment term in years</rdfs:comment>
+        <rdfs:domain rdf:resource="&kk;Statiya"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://karakalpak.law/ontology#jaza_max -->
+    <owl:DatatypeProperty rdf:about="&kk;jaza_max">
+        <rdfs:label xml:lang="kk">jaza maksimal</rdfs:label>
+        <rdfs:label xml:lang="en">maximum punishment</rdfs:label>
+        <rdfs:comment xml:lang="kk">Eń kóp jaza muddeti (jıl)</rdfs:comment>
+        <rdfs:comment xml:lang="en">Maximum punishment term in years</rdfs:comment>
+        <rdfs:domain rdf:resource="&kk;Statiya"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://karakalpak.law/ontology#jinayat_turi -->
+    <owl:DatatypeProperty rdf:about="&kk;jinayat_turi">
+        <rdfs:label xml:lang="kk">jinayat túri</rdfs:label>
+        <rdfs:label xml:lang="en">crime type</rdfs:label>
+        <rdfs:comment xml:lang="kk">Jinayat kategoriyası</rdfs:comment>
+        <rdfs:comment xml:lang="en">Crime category</rdfs:comment>
+        <rdfs:domain rdf:resource="&kk;Statiya"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://karakalpak.law/ontology#awırlıq_dárejesi -->
+    <owl:DatatypeProperty rdf:about="&kk;awırlıq_dárejesi">
+        <rdfs:label xml:lang="kk">awırlıq dárejesi</rdfs:label>
+        <rdfs:label xml:lang="en">severity level</rdfs:label>
+        <rdfs:comment xml:lang="kk">Jinayattıń awırlıq dárejesi: Jeńil, Orta, Awır</rdfs:comment>
+        <rdfs:comment xml:lang="en">Severity level of crime: Light, Medium, Heavy</rdfs:comment>
+        <rdfs:domain rdf:resource="&kk;Statiya"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://karakalpak.law/ontology#jaza_turi -->
+    <owl:DatatypeProperty rdf:about="&kk;jaza_turi">
+        <rdfs:label xml:lang="kk">jaza túri</rdfs:label>
+        <rdfs:label xml:lang="en">punishment type</rdfs:label>
+        <rdfs:comment xml:lang="kk">Jaza túri (túrme, aqsha jazası, shimǵay t.b.)</rdfs:comment>
+        <rdfs:comment xml:lang="en">Type of punishment (imprisonment, fine, etc.)</rdfs:comment>
+        <rdfs:domain rdf:resource="&kk;Jaza"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://karakalpak.law/ontology#nızam_id -->
+    <owl:DatatypeProperty rdf:about="&kk;nızam_id">
+        <rdfs:label xml:lang="kk">nızam identifikatorı</rdfs:label>
+        <rdfs:label xml:lang="en">law identifier</rdfs:label>
+        <rdfs:comment xml:lang="kk">Nızamdıń únikal identifikatorı</rdfs:comment>
+        <rdfs:comment xml:lang="en">Unique identifier for the law</rdfs:comment>
+        <rdfs:domain rdf:resource="&kk;Statiya"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://karakalpak.law/ontology#atı -->
+    <owl:DatatypeProperty rdf:about="&kk;atı">
+        <rdfs:label xml:lang="kk">atı</rdfs:label>
+        <rdfs:label xml:lang="en">name</rdfs:label>
+        <rdfs:comment xml:lang="kk">Nızamdıń atı</rdfs:comment>
+        <rdfs:comment xml:lang="en">Name of the law</rdfs:comment>
+        <rdfs:domain rdf:resource="&kk;Nızam"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://karakalpak.law/ontology#turi -->
+    <owl:DatatypeProperty rdf:about="&kk;turi">
+        <rdfs:label xml:lang="kk">túri</rdfs:label>
+        <rdfs:label xml:lang="en">type</rdfs:label>
+        <rdfs:comment xml:lang="kk">Nızam túri (Jinayat Kodeksi, Puqaralıq Kodeksi)</rdfs:comment>
+        <rdfs:comment xml:lang="en">Type of law (Criminal Code, Civil Code)</rdfs:comment>
+        <rdfs:domain rdf:resource="&kk;Nızam"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://karakalpak.law/ontology#qabıl_etilgen_jıl -->
+    <owl:DatatypeProperty rdf:about="&kk;qabıl_etilgen_jıl">
+        <rdfs:label xml:lang="kk">qabıl etilgen jıl</rdfs:label>
+        <rdfs:label xml:lang="en">year adopted</rdfs:label>
+        <rdfs:comment xml:lang="kk">Nızam qabıl etilgen jıl</rdfs:comment>
+        <rdfs:comment xml:lang="en">Year the law was adopted</rdfs:comment>
+        <rdfs:domain rdf:resource="&kk;Nızam"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://karakalpak.law/ontology#nómiri -->
+    <owl:DatatypeProperty rdf:about="&kk;nómiri">
+        <rdfs:label xml:lang="kk">nómiri</rdfs:label>
+        <rdfs:label xml:lang="en">number</rdfs:label>
+        <rdfs:comment xml:lang="kk">Statiya nómiri (statiya_nómiri menen birday)</rdfs:comment>
+        <rdfs:comment xml:lang="en">Number (same as statiya_nómiri)</rdfs:comment>
+        <rdfs:domain rdf:resource="&kk;Statiya"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // SWRL Rules - Shegeriw Qáǵıydeleri
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <!--
+    Qáǵıyda 1: Eger jaza_max > 10 bolsa, ol awır jinayat
+    Rule 1: If jaza_max > 10, then it is a heavy crime
+
+    Statiya(?s) ∧ jaza_max(?s, ?jaza) ∧ swrlb:greaterThan(?jaza, 10)
+        → kámil_etedi(?s, AwırJinayat)
+    -->
+
+    <!--
+    Qáǵıyda 2: Eger jinayat_turi = "Múlikke qarsi" bolsa, MúlikkeQarsıJinayat klassına kiredi
+    Rule 2: If jinayat_turi = "Múlikke qarsi", then it belongs to MúlikkeQarsıJinayat class
+
+    Statiya(?s) ∧ jinayat_turi(?s, "Múlikke qarsi")
+        → kámil_etedi(?s, MúlikkeQarsıJinayat)
+    -->
+
+    <!--
+    Qáǵıyda 3: Eger jinayat_turi = "Adamǵa qarsi" bolsa, AdamǵaQarsıJinayat klassına kiredi
+    Rule 3: If jinayat_turi = "Adamǵa qarsi", then it belongs to AdamǵaQarsıJinayat class
+
+    Statiya(?s) ∧ jinayat_turi(?s, "Adamǵa qarsi")
+        → kámil_etedi(?s, AdamǵaQarsıJinayat)
+    -->
+
+    <!--
+    Qáǵıyda 4: Birday jinayat túrindegi statiyalar baylanıslı
+    Rule 4: Articles with the same crime type are related
+
+    Statiya(?s1) ∧ Statiya(?s2) ∧ jinayat_turi(?s1, ?turi) ∧ jinayat_turi(?s2, ?turi) ∧ differentFrom(?s1, ?s2)
+        → baylanıslı(?s1, ?s2)
+    -->
+
+    <!--
+    Qáǵıyda 5: Eger awırlıq_dárejesi = "Awır" bolsa, AwırJinayat
+    Rule 5: If awırlıq_dárejesi = "Awır", then AwırJinayat
+
+    Statiya(?s) ∧ awırlıq_dárejesi(?s, "Awır")
+        → kámil_etedi(?s, AwırJinayat)
+    -->
+
+    <!--
+    Qáǵıyda 6: Eger awırlıq_dárejesi = "Orta" bolsa, OrtaAwırlıqtaǵıJinayat
+    Rule 6: If awırlıq_dárejesi = "Orta", then OrtaAwırlıqtaǵıJinayat
+
+    Statiya(?s) ∧ awırlıq_dárejesi(?s, "Orta")
+        → kámil_etedi(?s, OrtaAwırlıqtaǵıJinayat)
+    -->
+
+    <!--
+    Qáǵıyda 7: Eger awırlıq_dárejesi = "Jeńil" bolsa, JeńilJinayat
+    Rule 7: If awırlıq_dárejesi = "Jeńil", then JeńilJinayat
+
+    Statiya(?s) ∧ awırlıq_dárejesi(?s, "Jeńil")
+        → kámil_etedi(?s, JeńilJinayat)
+    -->
+
+</rdf:RDF>

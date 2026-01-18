@@ -1,0 +1,654 @@
+# ============================================================================
+# huquqAI Configuration File / huquqAI Konfiguraciya Faylı
+# Legal Knowledge Base System for Karakalpak Language
+# Qalpaq tili ushın huqıqlıq bilimler bazası sisteması
+# ============================================================================
+
+# ============================================================================
+# Application Settings / Qollaniw Parametrleri
+# ============================================================================
+application:
+  # Application name / Qollanıwdıń atı
+  name: "huquqAI"
+
+  # Version / Versiya
+  version: "0.1.0"
+
+  # Environment: development, testing, production / Orta: ámeldagi, test, ishlab shıǵarıw
+  environment: "development"
+
+  # Debug mode (true/false) / Debug tártip (shın/jalǵan)
+  debug: true
+
+  # Application timezone / Qollanıw waqıt zonası
+  timezone: "Asia/Tashkent"
+
+# ============================================================================
+# Language Settings / Til Parametrleri
+# Configure supported languages and default language
+# Qollanılatuǵın tillerdi ha'm áhmiyetli tildi sazlaw
+# ============================================================================
+language:
+  # Default language / Áhmiyetli til: Karakalpak (kaa)
+  default: "kaa"
+
+  # Supported languages / Qollanılatuǵın tiller
+  supported:
+    - "kaa"  # Karakalpak / Qaraqalpaq
+    - "uz"   # Uzbek / Ózbekше
+    - "ru"   # Russian / Орысша
+    - "en"   # English / Inglizше
+
+  # Enable automatic language detection / Avtomatik til anıqlaw
+  auto_detect: true
+
+  # Fallback language if detection fails / Qaytıp keletuǵın til
+  fallback: "kaa"
+
+# ============================================================================
+# Database Paths / Ma'lumotlar Bazası Jollari
+# File paths for ontology and knowledge base storage
+# Ontologiya ha'm bilimler bazası fayllarınıń jollari
+# ============================================================================
+database:
+  # Database type / Ma'lumotlar bazası túri: file, mongodb, postgresql
+  type: "file"
+
+  # File-based database paths / Fayl negizli bazanıń jollari
+  files:
+    # Main ontology file path / Negizgi ontologiya faylınıń jollı
+    # Path / Jol: OWL format ontology file
+    ontology: "data/ontologies/legal_ontology.owl"
+
+    # Criminal Code ontology / Jinayat Kodeksi ontologiyası
+    criminal_code: "data/ontologies/criminal_code.owl"
+
+    # Civil Code ontology / Puqaralıq Kodeksi ontologiyası
+    civil_code: "data/ontologies/civil_code.owl"
+
+    # Knowledge base file / Bilimler bazası faylı
+    # Path / Jol: RDF/Turtle format knowledge base
+    knowledge_base: "data/knowledge/legal_kb.ttl"
+
+    # Legal documents JSON database / Huqıqlıq dokumentler JSON bazası
+    documents: "data/knowledge/documents.json"
+
+    # Indexed articles database / Indekslengen statiyalar bazası
+    articles: "data/knowledge/articles.db"
+
+    # Auto-save changes / Ózgerislerdi avtomatik saqlawish
+    auto_save: true
+
+    # Backup directory / Zaxire papkası
+    backup_dir: "data/backups"
+
+    # Create backup before modifications / Ózgertiw aldınan zaxire jasawish
+    backup_before_update: true
+
+  # MongoDB settings (if type="mongodb") / MongoDB sazlawlar
+  mongodb:
+    # Host address / Host addressi
+    host: "localhost"
+
+    # Port number / Port nomeri
+    port: 27017
+
+    # Database name / Baza atı
+    database: "huquqai_db"
+
+    # Collection for legal documents / Huqıqlıq dokumentler kolleksiyası
+    collection: "legal_documents"
+
+    # Authentication / Avtentifikaciya
+    username: "${MONGO_USER}"
+    password: "${MONGO_PASSWORD}"
+
+    # Connection timeout (seconds) / Qosılıw waqtı (sekundlar)
+    timeout: 30
+
+  # PostgreSQL settings (if type="postgresql") / PostgreSQL sazlawlar
+  postgresql:
+    # Host address / Host addressi
+    host: "localhost"
+
+    # Port number / Port nomeri
+    port: 5432
+
+    # Database name / Baza atı
+    database: "huquqai_db"
+
+    # Schema name / Sxema atı
+    schema: "legal"
+
+    # Tables / Tablitsalar
+    tables:
+      articles: "articles"
+      crimes: "crimes"
+      punishments: "punishments"
+
+    # Authentication / Avtentifikaciya
+    user: "huquqai_user"
+    password: "${DB_PASSWORD}"
+
+    # Connection pool settings / Qosılıw pool sazlawları
+    pool_size: 10
+    max_overflow: 20
+
+# ============================================================================
+# SPARQL Endpoint Configuration / SPARQL Endpoint Sazlawları
+# Settings for querying the knowledge base using SPARQL
+# SPARQL arqalı bilimler bazasınan soraw beriwdiń sazlawları
+# ============================================================================
+sparql:
+  # Main SPARQL query endpoint / Negizgi SPARQL soraw endpoint
+  # URL / URL: SPARQL SELECT/ASK/CONSTRUCT queries
+  endpoint: "http://localhost:3030/huquqai/sparql"
+
+  # SPARQL update endpoint / SPARQL jańalaw endpoint
+  # URL / URL: SPARQL INSERT/DELETE/UPDATE queries
+  update_endpoint: "http://localhost:3030/huquqai/update"
+
+  # Graph store endpoint / Graf saqlawish endpoint
+  # URL / URL: For direct graph manipulation
+  graph_store: "http://localhost:3030/huquqai/data"
+
+  # Default graph URI / Áhmiyetli graf URI
+  default_graph: "http://huquqai.org/graph/default"
+
+  # Named graphs / Atamalı graflar
+  graphs:
+    criminal_law: "http://huquqai.org/graph/criminal"
+    civil_law: "http://huquqai.org/graph/civil"
+    administrative_law: "http://huquqai.org/graph/administrative"
+
+  # Query timeout (seconds) / Soraw waqtı shegi (sekundlar)
+  timeout: 30
+
+  # Maximum query execution time / Eń úlken soraw orınlaw waqtı
+  max_execution_time: 60
+
+  # Retry count on failure / Qátelik boyınsha qayta urınıs sanı
+  retry_count: 3
+
+  # Retry delay (seconds) / Qayta urınıs keshigiwi (sekundlar)
+  retry_delay: 2
+
+  # Enable query logging / Sorawlardı loglaw
+  log_queries: true
+
+  # Query result limit / Soraw nátiyјesi shegi
+  result_limit: 1000
+
+  # Enable caching / Keshlaw qosıw
+  cache:
+    enabled: true
+    ttl: 3600  # Time to live in seconds / Ómirlik waqtı sekundlarda
+    max_size: 100  # Maximum cached queries / Eń kóp keshlenetuǵın sorawlar
+
+# ============================================================================
+# OWL Ontology Settings / OWL Ontologiya Sazlawları
+# Ontology structure and namespace configuration
+# Ontologiya strukturası ha'm namespace sazlawları
+# ============================================================================
+ontology:
+  # Base URI for the ontology / Ontologiya ushın negizgi URI
+  base_uri: "http://huquqai.org/ontology#"
+
+  # Namespace prefixes / Namespace prefiksleri
+  namespaces:
+    huquq: "http://huquqai.org/ontology#"
+    legal: "http://legal-ontology.org#"
+    owl: "http://www.w3.org/2002/07/owl#"
+    rdf: "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    rdfs: "http://www.w3.org/2000/01/rdf-schema#"
+    xsd: "http://www.w3.org/2001/XMLSchema#"
+    dc: "http://purl.org/dc/elements/1.1/"
+    dcterms: "http://purl.org/dc/terms/"
+
+  # Main ontology classes / Negizgi ontologiya klasslari
+  classes:
+    - "Nızam"              # Law / Huqıqlıq nızam
+    - "Statiya"            # Article / Statiya
+    - "Jinayat"            # Crime / Jinayat
+    - "Jaza"               # Punishment / Jaza
+    - "JinayatKodeksi"     # Criminal Code / Jinayat Kodeksi
+    - "PuqaralıqKodeksi"   # Civil Code / Puqaralıq Kodeksi
+    - "SorawBeriwshi"      # User / Soraw beriwshi
+    - "Juwap"              # Answer / Juwap
+
+  # Object properties / Obyekt xassalari
+  properties:
+    object:
+      - "hasArticle"       # has article / statiyaǵa iye
+      - "hasPunishment"    # has punishment / jazaǵa iye
+      - "relatedToCrime"   # related to crime / jinayatqa baylanıslı
+      - "belongsToCode"    # belongs to code / kodeksке kiredi
+      - "appliesTo"        # applies to / qollanıladi
+      - "supersedes"       # supersedes / ornın almastıradı
+
+    datatype:
+      - "articleNumber"    # article number / statiya nomeri
+      - "crimeType"        # crime type / jinayat túri
+      - "severity"         # severity / awırlıq
+      - "description"      # description / túsinik
+      - "effectiveDate"    # effective date / quwatqa kiretugın sene
+      - "maxPenalty"       # maximum penalty / eń úlken jaza
+
+# ============================================================================
+# Reasoning Engine Settings / Sebep-Saldar Mexanizmi Sazlawları
+# Configuration for OWL reasoning and inference
+# OWL sebep-saldar shıǵarıw ha'm xulasa jasawish sazlawları
+# ============================================================================
+reasoning:
+  # Enable reasoning / Sebep-saldar shıǵarıwdı qosıw
+  enabled: true
+
+  # Reasoner type / Sebep-saldar shıǵarıwshı túri
+  # Options / Variantlar: HermiT, Pellet, FaCT++, ELK, Openllet
+  reasoner: "HermiT"
+
+  # Reasoning profile / Sebep-saldar shıǵarıw profili
+  # Options / Variantlar: OWL2_DL, OWL2_EL, OWL2_QL, OWL2_RL
+  profile: "OWL2_DL"
+
+  # Enable incremental reasoning / Inkremental sebep-saldar shıǵarıw
+  incremental: true
+
+  # Consistency checking / Uyǵınlıǵın tekseriv
+  consistency_check:
+    enabled: true
+    on_load: true         # Check when loading / Júklegen waqtında tekseriv
+    on_update: true       # Check after updates / Jańalaw soń tekseriv
+
+  # Classification settings / Klassifikaciya sazlawları
+  classification:
+    enabled: true
+    auto_classify: true   # Automatically classify new instances / Jańa misollarni avtomatik klassifikaciyalaw
+
+  # Inference rules / Xulasa jasawish qáǵıydeleri
+  inference:
+    # Infer property values / Xassalardıń mánislerin shıǵarıw
+    infer_properties: true
+
+    # Infer class membership / Klass kiriwshiligin shıǵarıw
+    infer_classes: true
+
+    # Infer transitive properties / Tranzitiv xassalarni shıǵarıw
+    infer_transitive: true
+
+    # Infer inverse properties / Ters xassalarni shıǵarıw
+    infer_inverse: true
+
+  # Reasoning timeout (seconds) / Sebep-saldar waqtı shegi (sekundlar)
+  timeout: 120
+
+  # Memory limit (MB) / Xáter shegi (MB)
+  memory_limit: 2048
+
+  # Cache reasoning results / Sebep-saldar nátiyјelerin keshlew
+  cache_results: true
+
+  # Reasoning optimization / Sebep-saldar optimizaciya
+  optimization:
+    level: "medium"  # Options / Variantlar: low, medium, high
+    parallel: true   # Use parallel processing / Parallel islewdi qollanıw
+
+# ============================================================================
+# API Settings / API Sazlawları
+# REST API server configuration
+# REST API server sazlawları
+# ============================================================================
+api:
+  # Server host address / Server host addressi
+  # Host / Host: 0.0.0.0 for all interfaces, localhost for local only
+  host: "0.0.0.0"
+
+  # Server port / Server port
+  # Port / Port: Default 8000
+  port: 8000
+
+  # Enable auto-reload in development / Ámeldagı ortada avto-qayta júklew
+  reload: true
+
+  # Number of worker processes / Ishshi processler sanı
+  workers: 1
+
+  # Debug mode / Debug tártip
+  # Debug / Debug: Enable detailed error messages
+  debug: true
+
+  # API version / API versiyası
+  version: "v1"
+
+  # API prefix / API prefiks
+  prefix: "/api/v1"
+
+  # API title / API atı
+  title: "huquqAI Legal Knowledge Base API"
+
+  # API description / API túsinik
+  description: "Qalpaq tili ushın huqıqlıq bilimler bazası API"
+
+  # CORS (Cross-Origin Resource Sharing) / CORS sazlawları
+  cors:
+    # Enable CORS / CORS qosıw
+    enabled: true
+
+    # Allowed origins / Ruxsat etilgen mánbeler
+    origins:
+      - "http://localhost:3000"
+      - "http://localhost:8080"
+      - "http://127.0.0.1:3000"
+
+    # Allow credentials / Kredensiallarga ruxsat
+    allow_credentials: true
+
+    # Allowed methods / Ruxsat etilgen metodlar
+    allow_methods:
+      - "GET"
+      - "POST"
+      - "PUT"
+      - "DELETE"
+      - "PATCH"
+
+    # Allowed headers / Ruxsat etilgen header-ler
+    allow_headers:
+      - "Content-Type"
+      - "Authorization"
+      - "Accept"
+      - "X-API-Key"
+
+  # Rate limiting / Cheklew limiti
+  rate_limit:
+    # Enable rate limiting / Limitlew qosıw
+    enabled: true
+
+    # Requests per minute / Minutına sorawlar
+    requests_per_minute: 60
+
+    # Requests per hour / Saatına sorawlar
+    requests_per_hour: 1000
+
+    # Requests per day / Kúnine sorawlar
+    requests_per_day: 10000
+
+  # Authentication / Avtentifikaciya
+  authentication:
+    enabled: false
+    type: "api_key"  # Options / Variantlar: api_key, jwt, oauth2
+    api_key_header: "X-API-Key"
+
+  # Response compression / Juwap qısıw
+  compression:
+    enabled: true
+    minimum_size: 1000  # Minimum response size in bytes / Eń kishi juwap ólshemi baytlarda
+
+# ============================================================================
+# Logging Configuration / Loglaw Sazlawları
+# System logging and monitoring settings
+# Sistema loglaw ha'm monitoring sazlawları
+# ============================================================================
+logging:
+  # Log level / Log deńgey
+  # Levels / Deńgeeyler: DEBUG, INFO, WARNING, ERROR, CRITICAL
+  # DEBUG - Detailed information / Eǵjeyli málumot
+  # INFO - General information / Umumiy málumot
+  # WARNING - Warning messages / Eskertpeler
+  # ERROR - Error messages / Qátelik xabarları
+  # CRITICAL - Critical errors / Kritik qátelikler
+  level: "INFO"
+
+  # Log format / Log formati
+  # Format / Format: Custom log message format
+  format: "{time:YYYY-MM-DD HH:mm:ss} | {level} | {name}:{function}:{line} | {message}"
+
+  # Main log file path / Negizgi log fayl jollı
+  # File / Fayl: Path to main application log file
+  file: "logs/huquqai.log"
+
+  # Error log file / Qátelik log faylı
+  error_file: "logs/error.log"
+
+  # Access log file / Qatnas log faylı
+  access_file: "logs/access.log"
+
+  # SPARQL query log file / SPARQL soraw log faylı
+  query_file: "logs/sparql_queries.log"
+
+  # Log rotation / Log aylanıw
+  # Rotation / Aylanıw: Rotate logs when they reach size limit
+  rotation: "10 MB"
+
+  # Log retention / Log saqlawish
+  # Retention / Saqlawish: Keep logs for specified period
+  retention: "30 days"
+
+  # Compression / Qısıw
+  # Compress / Qısıw: Compress old log files
+  compression: "zip"
+
+  # Console output / Konsol shıǵarıw
+  console:
+    enabled: true
+    level: "INFO"
+    colorize: true
+
+  # Component-specific log levels / Komponent boyınsha log deńgeyleri
+  components:
+    api: "INFO"
+    database: "INFO"
+    sparql: "DEBUG"
+    reasoner: "INFO"
+    ontology: "INFO"
+
+  # Log sensitive data / Sezimtalli ma'lumotlardı loglaw
+  log_sensitive_data: false
+
+  # Include traceback in logs / Loglarda traceback kiritivin
+  include_traceback: true
+
+# ============================================================================
+# Karakalpak Legal Terminology / Qalpaq Huqıqlıq Terminologiyası
+# Legal terms in Karakalpak language and translations
+# Qalpaq tilindegi huqıqlıq terminler ha'm olardıń tárcimeler
+# ============================================================================
+terminology:
+  # Karakalpak terms / Qalpaq terminleri
+  karakalpak:
+    nizam: "Nızam"                              # Law / Huqıqlıq nızam
+    statiya: "Statiya"                          # Article / Statiya
+    jinayat: "Jinayat"                          # Crime / Jinayat
+    jaza: "Jaza"                                # Punishment / Jaza
+    jinayat_kodeksi: "Jinayat Kodeksi"         # Criminal Code / Jinayat Kodeksi
+    puqaraliq_kodeksi: "Puqaralıq Kodeksi"     # Civil Code / Puqaralıq Kodeksi
+    soraw_beriwshi: "Soraw beriwshi"           # User/Questioner / Soraw beriwshi
+    juwap: "Juwap"                             # Answer / Juwap
+    izlew: "Izlew"                             # Search / Izlew
+    jinayat_awir_turi: "Jinayattıń awır túri"  # Heavy crime / Awır jinayat
+    jinayatshi: "Jinayatshı"                   # Criminal / Jinayatshı
+    qurbanlıq: "Qurbanlıq"                     # Victim / Qurbanlıq
+    aybı_joq: "Aybı joq"                       # Innocent / Aybı joq
+    aybı bar: "Aybı bar"                       # Guilty / Aybı bar
+    sot: "Sot"                                 # Court / Sot
+    sud: "Sud"                                 # Judge / Sud
+    advokat: "Advokat"                         # Lawyer / Advokat
+
+  # Translation mappings / Tárcime sáykeslikler
+  translations:
+    nizam:
+      uz: "Qonun"
+      ru: "Закон"
+      en: "Law"
+    statiya:
+      uz: "Modda"
+      ru: "Статья"
+      en: "Article"
+    jinayat:
+      uz: "Jinoyat"
+      ru: "Преступление"
+      en: "Crime"
+    jaza:
+      uz: "Jazo"
+      ru: "Наказание"
+      en: "Punishment"
+    jinayat_kodeksi:
+      uz: "Jinoyat Kodeksi"
+      ru: "Уголовный Кодекс"
+      en: "Criminal Code"
+    puqaraliq_kodeksi:
+      uz: "Fuqarolik Kodeksi"
+      ru: "Гражданский Кодекс"
+      en: "Civil Code"
+
+# ============================================================================
+# Data Paths / Ma'lumotlar Jollari
+# File system paths for data storage
+# Ma'lumotlar saqlawish ushın fayl sistema jollari
+# ============================================================================
+paths:
+  # Ontology files directory / Ontologiya fayllar papkası
+  ontologies: "data/ontologies"
+
+  # Knowledge base directory / Bilimler bazası papkası
+  knowledge: "data/knowledge"
+
+  # Machine learning models / Mashinalı úyreniw modelleri
+  models: "data/models"
+
+  # Cache directory / Kesh papkası
+  cache: "data/cache"
+
+  # Temporary files / Waqtınsha fayllar
+  temp: "data/temp"
+
+  # Backup directory / Zaxire papkası
+  backups: "data/backups"
+
+  # Logs directory / Loglar papkası
+  logs: "logs"
+
+  # Upload directory / Júklaw papkası
+  uploads: "data/uploads"
+
+  # Export directory / Eksport papkası
+  exports: "data/exports"
+
+# ============================================================================
+# Search Settings / Izlew Sazlawları
+# Configuration for search functionality
+# Izlew funkciyası ushın sazlawlar
+# ============================================================================
+search:
+  # Maximum search results / Eń kóp izlew nátiyјeleri
+  max_results: 10
+
+  # Enable fuzzy search / Anıq emes izlewdi qosıw
+  fuzzy_search: true
+
+  # Fuzzy match threshold (0.0-1.0) / Anıq emes sáykeslik shegi
+  fuzzy_threshold: 0.8
+
+  # Case sensitive search / Registrǵa sezimtalli izlew
+  case_sensitive: false
+
+  # Minimum relevance score / Eń kishi baylanıslılıq ballı
+  min_score: 0.5
+
+  # Enable search highlighting / Izlew belgilewin qosıw
+  highlighting: true
+
+  # Search in specific fields / Belgili meydianlarda izlew
+  search_fields:
+    - "title"
+    - "content"
+    - "description"
+    - "keywords"
+
+  # Enable search history / Izlew tarixın qosıw
+  history:
+    enabled: true
+    max_entries: 100
+
+# ============================================================================
+# NLP and AI Settings / NLP ha'm AI Sazlawları
+# Natural Language Processing configuration
+# Tebiǵıy til islew sazlawları
+# ============================================================================
+nlp:
+  # Enable NLP features / NLP funkciyalarni qosıw
+  enabled: false
+
+  # Pre-trained model name / Aldınan úyretilgen model atı
+  model_name: "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+
+  # Embedding dimension / Embedding ólshemi
+  embedding_dimension: 384
+
+  # Similarity threshold / Uyqaslıq shegi
+  similarity_threshold: 0.7
+
+  # Maximum query length / Eń úlken soraw uzınlıǵı
+  max_query_length: 512
+
+  # Model cache directory / Model kesh papkası
+  model_cache: "data/models/nlp"
+
+# ============================================================================
+# Performance Settings / Ónimdarlık Sazlawları
+# System performance and optimization
+# Sistema ónimdarlıǵı ha'm optimizaciya
+# ============================================================================
+performance:
+  # Enable caching / Keshlawdi qosıw
+  caching: true
+
+  # Cache size limit (MB) / Kesh ólshemi shegi (MB)
+  cache_size_limit: 500
+
+  # Connection pool size / Qosılıw pool ólshemi
+  connection_pool_size: 10
+
+  # Query optimization / Soraw optimizaciya
+  optimize_queries: true
+
+  # Parallel processing / Parallel islew
+  parallel_processing: true
+
+  # Max parallel tasks / Eń kóp parallel tápsirmalar
+  max_parallel_tasks: 4
+
+# ============================================================================
+# Security Settings / Qáwipsiزlik Sazlawları
+# Security and access control configuration
+# Qáwipsizlik ha'm qatnas basqarıw sazlawları
+# ============================================================================
+security:
+  # Enable security features / Qáwipsizlik funkciyalarni qosıw
+  enabled: true
+
+  # Secret key for JWT / JWT ushın gizlin kilt
+  secret_key: "${SECRET_KEY}"
+
+  # Token expiration (hours) / Token waqtı bitiwi (saatlar)
+  token_expiration: 24
+
+  # Enable HTTPS only / Tek HTTPS qosıw
+  https_only: false
+
+  # Enable input validation / Kirisiw tekserivdi qosıw
+  input_validation: true
+
+  # Enable SPARQL injection prevention / SPARQL inyeksiyadan qorǵanıw
+  prevent_injection: true
+
+  # Allowed file upload extensions / Ruxsat etilgen fayl júklaw kengeytimleri
+  allowed_extensions:
+    - ".owl"
+    - ".rdf"
+    - ".ttl"
+    - ".json"
+    - ".xml"
+
+# ============================================================================
+# End of Configuration / Konfiguraciya sonı
+# ============================================================================

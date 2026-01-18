@@ -1,0 +1,267 @@
+@prefix kk: <http://karakalpak.law/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Qaraqalpaqstan Respublikası Jinayat Kodeksi
+# Criminal Code of the Republic of Karakalpakstan
+
+kk:JinayatKodeksi_2023
+    a kk:Nızam ;
+    kk:atı "Qaraqalpaqstan Respublikası Jinayat Kodeksi"@kk ;
+    kk:turi "Jinayat Kodeksi" ;
+    kk:qabıl_etilgen_jıl 2023 ;
+    rdfs:label "Qaraqalpaqstan Respublikası Jinayat Kodeksi"@kk ;
+    rdfs:label "Criminal Code of the Republic of Karakalpakstan"@en ;
+    rdfs:comment "Qaraqalpaqstan Respublikasınıń Jinayat Kodeksi - jinayat hám jazalar haqqında nızam"@kk .
+
+
+# ============================================================================
+# Statiya 169 - Qasdın adam óltiriw
+# Article 169 - Intentional Murder
+# ============================================================================
+
+kk:Statiya_169
+    a kk:Statiya ;
+    kk:nómiri 169 ;
+    kk:statiya_nómiri 169 ;
+    kk:sárelaw "Qasdın adam óltiriw"@kk ;
+    kk:tekstı "Qasdın adam óltiriw - on eki jıldan on tórt jılǵa shekem erkinlikten ayırıw menen jazalanadi."@kk ;
+    kk:jaza_min 12 ;
+    kk:jaza_max 14 ;
+    kk:jaza_turi "Erkinlikten ayırıw" ;
+    kk:jinayat_turi "Adamǵa qarsi" ;
+    kk:awırlıq_dárejesi "Awır" ;
+    kk:nızam_id "JinayatKodeksi_2023" ;
+    kk:tiyisli kk:JinayatKodeksi_2023 ;
+    rdfs:label "Statiya 169 - Qasdın adam óltiriw"@kk ;
+    rdfs:label "Article 169 - Intentional Murder"@en ;
+    rdfs:comment "Adamdı qasdın óltirgenlik ushın jaza"@kk .
+
+
+# ============================================================================
+# Statiya 175 - Ūrlıq (O'g'irliq)
+# Article 175 - Theft
+# ============================================================================
+
+kk:Statiya_175
+    a kk:Statiya ;
+    kk:nómiri 175 ;
+    kk:statiya_nómiri 175 ;
+    kk:sárelaw "Ūrlıq"@kk ;
+    kk:tekstı "Baska adamǵa tiyisli múlikti jasırın tartıp alıw (ūrlıq) - úsh jılǵa shekem erkinlikten ayırıw yamasa aqsha jazası menen jazalanadi."@kk ;
+    kk:jaza_min 0 ;
+    kk:jaza_max 3 ;
+    kk:jaza_turi "Erkinlikten ayırıw yamasa aqsha jazası" ;
+    kk:jinayat_turi "Múlikke qarsi" ;
+    kk:awırlıq_dárejesi "Orta" ;
+    kk:nızam_id "JinayatKodeksi_2023" ;
+    kk:tiyisli kk:JinayatKodeksi_2023 ;
+    rdfs:label "Statiya 175 - Ūrlıq"@kk ;
+    rdfs:label "Article 175 - Theft"@en ;
+    rdfs:comment "Basqanıń múlikin jasırın alıw"@kk .
+
+
+# ============================================================================
+# Statiya 177 - Talaw (Talon-taroj)
+# Article 177 - Robbery
+# ============================================================================
+
+kk:Statiya_177
+    a kk:Statiya ;
+    kk:nómiri 177 ;
+    kk:statiya_nómiri 177 ;
+    kk:sárelaw "Talaw"@kk ;
+    kk:tekstı "Kúsh qollaw yamasa onı qorqıtıw menen baska adamǵa tiyisli múlikti tartıp alıw - bes jıldan on eki jılǵa shekem erkinlikten ayırıw menen jazalanadi."@kk ;
+    kk:jaza_min 5 ;
+    kk:jaza_max 12 ;
+    kk:jaza_turi "Erkinlikten ayırıw" ;
+    kk:jinayat_turi "Múlikke qarsi" ;
+    kk:awırlıq_dárejesi "Awır" ;
+    kk:nızam_id "JinayatKodeksi_2023" ;
+    kk:tiyisli kk:JinayatKodeksi_2023 ;
+    rdfs:label "Statiya 177 - Talaw"@kk ;
+    rdfs:label "Article 177 - Robbery"@en ;
+    rdfs:comment "Kúsh qollaw menen múlik tartıp alıw"@kk .
+
+
+# ============================================================================
+# Statiya 168 - Aldaw (Firibgarlik)
+# Article 168 - Fraud
+# ============================================================================
+
+kk:Statiya_168
+    a kk:Statiya ;
+    kk:nómiri 168 ;
+    kk:statiya_nómiri 168 ;
+    kk:sárelaw "Aldaw"@kk ;
+    kk:tekstı "Basqa adamdı aldaw yamasa senim-ishenim paydalanıp múlik yamasa múlikke bolǵan huquqtı iye etiw - úsh jılǵa shekem erkinlikten ayırıw yamasa aqsha jazası menen jazalanadi."@kk ;
+    kk:jaza_min 0 ;
+    kk:jaza_max 3 ;
+    kk:jaza_turi "Erkinlikten ayırıw yamasa aqsha jazası" ;
+    kk:jinayat_turi "Múlikke qarsi" ;
+    kk:awırlıq_dárejesi "Orta" ;
+    kk:nızam_id "JinayatKodeksi_2023" ;
+    kk:tiyisli kk:JinayatKodeksi_2023 ;
+    rdfs:label "Statiya 168 - Aldaw"@kk ;
+    rdfs:label "Article 168 - Fraud"@en ;
+    rdfs:comment "Adamdı aldaw arqalı múlik alıw"@kk .
+
+
+# ============================================================================
+# Statiya 213 - Paraxorlik (Poraxo'rlik)
+# Article 213 - Bribery
+# ============================================================================
+
+kk:Statiya_213
+    a kk:Statiya ;
+    kk:nómiri 213 ;
+    kk:statiya_nómiri 213 ;
+    kk:sárelaw "Paraxorlik"@kk ;
+    kk:tekstı "Dawlat xızmetkeriniń óz wazıypasına qarsı ámellerdi islewi yamasa islemeywi ushın paraxorlik - bes jıldan on jılǵa shekem erkinlikten ayırıw menen jazalanadi."@kk ;
+    kk:jaza_min 5 ;
+    kk:jaza_max 10 ;
+    kk:jaza_turi "Erkinlikten ayırıw" ;
+    kk:jinayat_turi "Dawlat hákim-basqarıwına qarsi" ;
+    kk:awırlıq_dárejesi "Awır" ;
+    kk:nızam_id "JinayatKodeksi_2023" ;
+    kk:tiyisli kk:JinayatKodeksi_2023 ;
+    rdfs:label "Statiya 213 - Paraxorlik"@kk ;
+    rdfs:label "Article 213 - Bribery"@en ;
+    rdfs:comment "Dawlat xızmetkerge paraxorlik beriw yamasa alıw"@kk .
+
+
+# ============================================================================
+# Statiya 276 - Jol hareketi qaydaların buzıw
+# Article 276 - Violation of Traffic Rules
+# ============================================================================
+
+kk:Statiya_276
+    a kk:Statiya ;
+    kk:nómiri 276 ;
+    kk:statiya_nómiri 276 ;
+    kk:sárelaw "Jol hareketi qaydaların buzıw"@kk ;
+    kk:tekstı "Jol hareketi qaydaların buzıw nátiyjeside adamǵa awır denelikiń zaqımlanıw yamasa ólim keltiriw - eki jıldan bes jılǵa shekem erkinlikten ayırıw menen jazalanadi."@kk ;
+    kk:jaza_min 2 ;
+    kk:jaza_max 5 ;
+    kk:jaza_turi "Erkinlikten ayırıw" ;
+    kk:jinayat_turi "Adamǵa qarsi" ;
+    kk:awırlıq_dárejesi "Orta" ;
+    kk:nızam_id "JinayatKodeksi_2023" ;
+    kk:tiyisli kk:JinayatKodeksi_2023 ;
+    rdfs:label "Statiya 276 - Jol hareketi qaydaların buzıw"@kk ;
+    rdfs:label "Article 276 - Violation of Traffic Rules"@en ;
+    rdfs:comment "Jol hareketi qaydaların buzıp adamǵa zıyan jetkizgenlik"@kk .
+
+
+# ============================================================================
+# Statiya 205 - Narkotik savdası
+# Article 205 - Drug Trafficking
+# ============================================================================
+
+kk:Statiya_205
+    a kk:Statiya ;
+    kk:nómiri 205 ;
+    kk:statiya_nómiri 205 ;
+    kk:sárelaw "Narkotik savdası"@kk ;
+    kk:tekstı "Narkotik zatlar yamasa psixotrop maddelerdı nızamǵa qarsı óndiriw, saxlaw, tasıw yamasa satıw máqsetinde tarqatıw - on jıldan jigirma jılǵa shekem erkinlikten ayırıw menen jazalanadi."@kk ;
+    kk:jaza_min 10 ;
+    kk:jaza_max 20 ;
+    kk:jaza_turi "Erkinlikten ayırıw" ;
+    kk:jinayat_turi "Jámiyet densawlıǵına qarsi" ;
+    kk:awırlıq_dárejesi "Awır" ;
+    kk:nızam_id "JinayatKodeksi_2023" ;
+    kk:tiyisli kk:JinayatKodeksi_2023 ;
+    rdfs:label "Statiya 205 - Narkotik savdası"@kk ;
+    rdfs:label "Article 205 - Drug Trafficking"@en ;
+    rdfs:comment "Narkotik zatlar menen nızamǵa qarsı islewler"@kk .
+
+
+# ============================================================================
+# Statiya 242 - Qullıq wazıypasın suwqat paydalanıw
+# Article 242 - Abuse of Official Position
+# ============================================================================
+
+kk:Statiya_242
+    a kk:Statiya ;
+    kk:nómiri 242 ;
+    kk:statiya_nómiri 242 ;
+    kk:sárelaw "Qullıq wazıypasın suwqat paydalanıw"@kk ;
+    kk:tekstı "Qullıq adamınıń óz wazıypasın shek qaralǵan pıydalardı ózine yamasa basqalarga alıw máqsetinde suwqat paydalanıwı - eki jılǵa shekem erkinlikten ayırıw yamasa aqsha jazası menen jazalanadi."@kk ;
+    kk:jaza_min 0 ;
+    kk:jaza_max 2 ;
+    kk:jaza_turi "Erkinlikten ayırıw yamasa aqsha jazası" ;
+    kk:jinayat_turi "Dawlat hákim-basqarıwına qarsi" ;
+    kk:awırlıq_dárejesi "Jeńil" ;
+    kk:nızam_id "JinayatKodeksi_2023" ;
+    kk:tiyisli kk:JinayatKodeksi_2023 ;
+    rdfs:label "Statiya 242 - Qullıq wazıypasın suwqat paydalanıw"@kk ;
+    rdfs:label "Article 242 - Abuse of Official Position"@en ;
+    rdfs:comment "Qullıq wazıypasın nızamǵa qarsı paydalanıw"@kk .
+
+
+# ============================================================================
+# Statiya 189 - Hújjetlerdi aldaw
+# Article 189 - Document Forgery
+# ============================================================================
+
+kk:Statiya_189
+    a kk:Statiya ;
+    kk:nómiri 189 ;
+    kk:statiya_nómiri 189 ;
+    kk:sárelaw "Hújjetlerdi aldaw"@kk ;
+    kk:tekstı "Huquq berletuǵın yamasa wazıypalardan bospalaǵan hújjetlerdi aldaw, jazıp jasaǵan yamasa sattırıǵan saxlaw yamasa paydalanıw - bir jıldan tórt jılǵa shekem erkinlikten ayırıw menen jazalanadi."@kk ;
+    kk:jaza_min 1 ;
+    kk:jaza_max 4 ;
+    kk:jaza_turi "Erkinlikten ayırıw" ;
+    kk:jinayat_turi "Dawlat hákim-basqarıwına qarsi" ;
+    kk:awırlıq_dárejesi "Orta" ;
+    kk:nızam_id "JinayatKodeksi_2023" ;
+    kk:tiyisli kk:JinayatKodeksi_2023 ;
+    rdfs:label "Statiya 189 - Hújjetlerdi aldaw"@kk ;
+    rdfs:label "Article 189 - Document Forgery"@en ;
+    rdfs:comment "Dawlat hújjetlerin aldaw yamasa jasaǵan jasaǵan hújjetler menen paydalanıw"@kk .
+
+
+# ============================================================================
+# Statiya 277 - Mast halda kólik basqarıw
+# Article 277 - Driving Under the Influence
+# ============================================================================
+
+kk:Statiya_277
+    a kk:Statiya ;
+    kk:nómiri 277 ;
+    kk:statiya_nómiri 277 ;
+    kk:sárelaw "Mast halda kólik basqarıw"@kk ;
+    kk:tekstı "Spiritli ishimliklerdi ishken yamasa narkotik maddelerdı qabıl etken halda kólik quralların basqarıw - bir jıldan úsh jılǵa shekem kólik basqarıw huquqınan ayırıw yamasa erkinlikten ayırıw menen jazalanadi."@kk ;
+    kk:jaza_min 1 ;
+    kk:jaza_max 3 ;
+    kk:jaza_turi "Erkinlikten ayırıw yamasa huquqlardan ayırıw" ;
+    kk:jinayat_turi "Jámiyet qáwipsizligine qarsi" ;
+    kk:awırlıq_dárejesi "Orta" ;
+    kk:nızam_id "JinayatKodeksi_2023" ;
+    kk:tiyisli kk:JinayatKodeksi_2023 ;
+    rdfs:label "Statiya 277 - Mast halda kólik basqarıw"@kk ;
+    rdfs:label "Article 277 - Driving Under the Influence"@en ;
+    rdfs:comment "Alkogol yamasa narkotik tásiride kólik basqarıw"@kk .
+
+
+# ============================================================================
+# Baylanıslar - Relationships
+# ============================================================================
+
+# Múlikke qarsi jinayatlar baylanıslı
+kk:Statiya_175 kk:baylanıslı kk:Statiya_177 .
+kk:Statiya_175 kk:baylanıslı kk:Statiya_168 .
+kk:Statiya_177 kk:baylanıslı kk:Statiya_168 .
+
+# Dawlat hákim-basqarıwına qarsi jinayatlar baylanıslı
+kk:Statiya_213 kk:baylanıslı kk:Statiya_242 .
+kk:Statiya_213 kk:baylanıslı kk:Statiya_189 .
+kk:Statiya_242 kk:baylanıslı kk:Statiya_189 .
+
+# Adamǵa qarsi jinayatlar baylanıslı
+kk:Statiya_169 kk:baylanıslı kk:Statiya_276 .
+
+# Jol hareketi menen baylanıslı jinayatlar
+kk:Statiya_276 kk:baylanıslı kk:Statiya_277 .

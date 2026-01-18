@@ -1,0 +1,44 @@
+# RDF & Ontology Libraries
+rdflib==7.0.0
+owlready2==0.46
+SPARQLWrapper==2.0.0
+
+# Web Framework & API
+fastapi==0.109.2
+uvicorn[standard]==0.27.1
+pydantic==1.10.13
+pydantic-settings==2.0.3
+
+# HTTP & Async
+httpx==0.26.0
+anyio==4.2.0
+starlette==0.36.3
+
+# Configuration & Environment
+python-dotenv==1.0.1
+pyyaml==6.0.1
+
+# Testing
+pytest==8.0.0
+pytest-cov==4.1.0
+pytest-asyncio==0.23.4
+pytest-mock==3.12.0
+
+# Code Quality
+black==24.1.1
+pylint==3.0.3
+isort==5.13.2
+
+# Type Checking
+mypy==1.8.0
+types-PyYAML==6.0.12.12
+
+# Logging
+loguru==0.7.2
+
+# Telegram Bot
+aiogram==3.4.1
+
+# Utilities
+python-multipart==0.0.9
+email-validator==2.1.0.post1
