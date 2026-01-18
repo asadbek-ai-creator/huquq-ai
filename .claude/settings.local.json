@@ -8,7 +8,13 @@
       "Bash(python run_huquqai.py:*)",
       "Bash(git init:*)",
       "Bash(git remote add:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git branch:*)",
+      "Bash(git push:*)",
+      "Bash(pip install:*)",
+      "Bash(python -c \"\nimport asyncio\nimport os\nos.environ[''TELEGRAM_BOT_TOKEN''] = ''8161384533:AAHde2-_bBg_xRDSWwudzwSVYTZC-X56RZA''\n\nfrom aiogram import Bot\nfrom aiogram.enums import ParseMode\n\nasync def test_bot\\(\\):\n    bot = Bot\\(token=os.environ[''TELEGRAM_BOT_TOKEN'']\\)\n    try:\n        me = await bot.get_me\\(\\)\n        print\\(f''Bot connected successfully!''\\)\n        print\\(f''Bot username: @{me.username}''\\)\n        print\\(f''Bot name: {me.first_name}''\\)\n        print\\(f''Bot ID: {me.id}''\\)\n    except Exception as e:\n        print\\(f''Error: {e}''\\)\n    finally:\n        await bot.session.close\\(\\)\n\nasyncio.run\\(test_bot\\(\\)\\)\n\")",
+      "Bash(python -m src.api.bot:*)"
     ]
   }
 }
